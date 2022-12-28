@@ -1,0 +1,815 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 0.3rem;
+}
+
+/* ============== for tablet ===============  */
+@media screen and (max-width: 992px) {
+    body{
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+/* ============== for small tablet ===============  */
+@media screen and (max-width: 700px) {
+    body{
+        grid-template-columns: 1fr 1fr;
+    }
+}
+/* ============== for phone ===============  */
+@media screen and (max-width: 500px) {
+    body{
+        grid-template-columns: 1fr;
+    }
+}
+
+body > div {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #333;
+}
+
+/* ============== SHAPE 1 ================ */
+.shape-1 {
+    background-color: #6592cf;
+}
+.shape-1 span:nth-child(1) {
+    width: 12rem;
+    height: 6rem;
+    background-color: #243d83;
+    position: absolute; 
+    transform: rotate(45deg);
+}
+.shape-1 span:nth-child(2) {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    background: #243d83;
+    border: 2rem solid #6592cf;
+    z-index: 1;
+}
+.shape-1 span:nth-child(3) {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background-color: #eeb850;
+    z-index: 2;
+    position: absolute;
+}
+
+/* ============== SHAPE 2 =============== */
+.shape-2 {
+    background: #e97676;
+}
+.shape-2 div {
+    width: 8rem;
+    height: 10rem;
+    background: #060f55;
+    border-radius: 0 0 4rem 4rem;
+    display: flex;
+}
+.shape-2 div span {
+    width: 100%;
+    height: 7rem;
+    background: #e97676;
+    transform: translateY(-0.5rem);
+    border-radius: 1rem;
+    margin-top: -2rem;
+}
+.shape-2 div span:nth-child(odd) {
+    background: #060f55;
+}
+.shape-2::before {
+    content: '';
+    width: 1rem;
+    height: 8rem;
+    background: #060f55;
+    position: absolute;
+    bottom: 0;
+    left: calc(50% - 0.5rem);
+}
+
+/* ============== SHAPE 3 =============== */
+.shape-3 {
+    background: #191919;
+    flex-direction: column;
+}
+.shape-3 div:first-child {
+    width: 8rem;
+    height: 7rem;
+    background: #4f77ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    border-radius: 4rem 4rem 1rem 1rem;
+    position: relative;
+}
+.shape-3 div:first-child span {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+    background: #191919;
+    margin-top: 2.7rem;
+}
+.shape-3 div:first-child span:nth-child(2) {
+    width: 1.4rem;
+    height: 1.4rem;
+    position: absolute;
+    bottom: -0.6rem;
+    z-index: 1;
+}
+.shape-3 div:last-child {
+    width: 5rem;
+    height: 2.5rem;
+    background: #4f77ff;
+    border-radius: 0 0 1.4rem 1.4rem;
+    display: flex;
+    justify-content: center;
+    gap: 0.4rem;
+}
+.shape-3 div:last-child span{
+    background: #191919;
+    width: 0.6rem;
+    height: 1rem;
+    margin-top: 1.8rem;
+    border-radius: 0.4rem;
+}
+
+/* ============== SHAPE 4 =============== */
+.shape-4{
+    background: #0b2429;
+}
+.shape-4 span:nth-child(1) {
+    width: 8rem;
+    height: 8rem;
+    background: #998235;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+.shape-4 span:nth-child(1)::before,
+.shape-4 span:nth-child(1)::after {
+    content: '';
+    width: 4rem;
+    height: 4rem;
+    background-color: #998235;
+    position: absolute;
+    transform: rotate(45deg);
+}
+.shape-4 span:nth-child(1)::before {
+    left: -0.8rem;
+}
+.shape-4 span:nth-child(1)::after {
+    right: -0.8rem;
+}
+.shape-4 span:nth-child(2) {
+    background: #f3ac3c;
+    width: 7rem;
+    height: 7rem;
+    position: absolute;
+    border-radius: 50%;
+    border: 0.8rem solid #0b2429;
+}
+.shape-4 span:nth-child(3) {
+    background: #0b2429;
+    width: 2rem;
+    height: 2rem;
+    position: absolute;
+    border-radius: 50%;
+}
+
+/* ============== SHAPE 5 =============== */
+.shape-5{
+    background: #191919;
+}
+.shape-5 div{
+    width: 8rem;
+    height: 12rem;
+    background: #4f77ff;
+    border-radius: 4rem 4rem 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    position: relative;
+}
+.shape-5 div span{
+    background: #191919 ;
+    height: 1rem;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+.shape-5 div span:nth-child(1) {
+    width: 2.4rem;
+    margin-bottom: 3.3rem;
+}
+.shape-5 div span:nth-child(2) {
+    width: 3.8rem;
+    margin-bottom: 2.2rem;
+}
+.shape-5 div span:nth-child(3) {
+    width: 5.4rem;
+    margin-bottom: 1.1rem;
+}
+.shape-5 div span:nth-child(4) {
+    width: 6.6rem;
+}
+
+
+/* ============== SHAPE 6 (bell) =============== */
+.shape-6{
+    background: #312222;
+    flex-direction: column;
+}
+.shape-6 span:nth-child(1) {
+    width: 3rem;
+    height: 3rem;
+    background-color: #efa93b;
+    border-radius: 2rem 2rem 0rem 0rem;
+    margin-bottom: -1.2rem;
+}
+.shape-6 span:nth-child(2) {
+    width: 8rem;
+    height: 8rem;
+    background: #e08027;
+    border-radius: 4rem 4rem 1rem 1rem;
+    z-index: 1;
+}
+.shape-6 span:nth-child(3) {
+    width: 3rem;
+    height: 3rem;
+    background: #824b20;
+    border-radius: 0 0 2rem 2rem;
+    margin-top: -0.8rem;
+}
+
+/* ============== SHAPE 7 =============== */
+.shape-7 {
+    background: #293462;
+}
+.shape-7 div{
+    width: 10rem;
+    height: 10rem;
+    background: #fe5f55;
+    border-radius: 5rem 5rem 3rem 3rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-items: center;
+    align-items: start;
+    position: relative;
+    overflow: hidden;
+}
+.shape-7 div span{
+    background: #fff1c1;
+}
+.shape-7 div span:nth-child(1),
+.shape-7 div span:nth-child(2) {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    margin-top: -2.4rem;
+}
+.shape-7 div span:nth-child(3),
+.shape-7 div span:nth-child(4) {
+    width: 3rem;
+    height: 3rem;
+    border-radius: 50%;
+}
+.shape-7 div span:nth-child(5) {
+    width: 1.3rem;
+    height: 1.3rem;
+    background: #0b2429;
+    border-radius: 50%;
+    position: absolute;
+    top: 5.7rem;
+    left: 1.9rem;
+}
+.shape-7 div span:nth-child(6) {
+    width: 1.3rem;
+    height: 1.3rem;
+    background: #0b2429;
+    border-radius: 50%;
+    position: absolute;
+    top: 5.7rem;
+    right: 1.8rem;
+}
+.shape-7 div span:nth-child(7) {
+    width: 2.5rem;
+    height: 0.6rem;
+    border-radius: 0.2rem;
+    position: absolute;
+    bottom: 1rem;
+}
+
+/* ============== SHAPE 8 (elephant)=============== */
+.shape-8 {
+    background: #998235;
+}
+.shape-8 div:nth-child(2){
+    width: 8rem;
+    height: 8rem;
+    background: #1a4341;
+    border-radius: 50%;
+    z-index: 2;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+.shape-8 div:nth-child(2) span{
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background: #1a4341;
+    border: 0.5rem solid #998235;
+}
+.shape-8 div:nth-child(2)::before {
+    content: '';
+    width: 80%;
+    height: 1.2rem;
+    background: #1a4341;
+    position: absolute;
+    top: 35%;
+}
+.shape-8 div:nth-child(2)::after {
+    content: '';
+    width: 3.5rem;
+    height: 3.5rem;
+    position: absolute;
+    bottom: -3rem;
+    border-radius: 50%;
+    border: 0.8rem solid transparent;
+    border-top-color: white;
+    border-left-color: white;
+    transform: rotate(45deg);
+}
+.shape-8 div:nth-child(1),
+.shape-8 div:nth-child(3) {
+    position: relative;
+    width: 3rem;
+    height: 8rem;
+    background: #1a4341;
+    border-radius: 50%;
+}
+.shape-8 div:nth-child(1)::before,
+.shape-8 div:nth-child(3)::before {
+    content: '';
+    width: 82%;
+    height: 100%;
+    background: #0b2429;
+    border-radius: 50%;
+    position: absolute;
+    right: 0;
+}
+.shape-8 div:nth-child(3)::before {
+    left: 0;
+}
+.shape-8::before {
+    content: '';
+    width: 1.7rem;
+    height: 42%;
+    background: #0b2429;
+    position: absolute;
+    bottom: 0;
+    z-index: 3;
+    border-radius: 2rem 2rem 0 0;
+}
+
+/* ============== SHAPE 8 (gallery)=============== */
+.shape-9 {
+    background: #293462;
+}
+.shape-9 span {
+    width: 12rem;
+    height: 12rem;
+    background-color: #fff1c1;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+}
+.shape-9 span::before {
+    content: '';
+    width: 6rem;
+    height: 6rem;
+    background-color: #fe5f55;
+    position: absolute;
+    bottom: -3rem;
+    transform: rotate(45deg);
+    /* border-radius: 1rem 4rem; */
+
+}
+.shape-9 span::after {
+    content: '';
+    width: 9rem;
+    height: 9rem;
+    background-color: #fe5f55;
+    position: absolute;
+    bottom: -3rem;
+    right: -1rem;
+    transform: rotate(45deg);
+    /* border-radius: 5rem 4rem; */
+}
+
+/* ============== SHAPE 10 (Bee)=============== */
+.shape-10 {
+    background: #998235;
+    flex-direction: column;
+}
+.shape-10 div {
+    width: 10rem;
+    height: 5rem;
+    display: flex;
+}
+.shape-10 div:first-child span {
+    background: white;
+    width: 50%;
+    height: 100%;
+    border-radius: 50% 50% 50% 0;
+}
+.shape-10 div:first-child span:first-child {
+    border-radius: 50% 50% 0 50%;
+    
+}
+.shape-10 div:last-child {
+    background: #eff33c;
+    border-radius: 3rem;
+    gap: 0.4rem;
+    justify-content: start;
+    overflow: hidden;
+}
+.shape-10 div:last-child span {
+    background: #000;
+    width: 1.8rem;
+    height: 100%;
+}
+.shape-10 div:last-child span:last-child {
+    width: 1.3rem;
+    height: 1.3rem;
+    border-radius: 50%;
+    align-self:flex-start;
+    margin: 0.8rem 1.3rem 0 0;
+}
+
+
+/* ============== SHAPE 11 (mug)=============== */
+.shape-11 {
+    background-color: #293462;
+}
+.shape-11 div:nth-child(2) {
+    background-color: #fff1c1;
+    width: 6rem;
+    height: 4rem;
+    border-radius: 0 0 2rem 2rem;
+    display:  flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    padding: 0 0.8rem;
+}
+.shape-11 div:nth-child(2) span {
+    background-color: #fe5f55;
+    width: 1.6rem;
+    height: 0.25rem;
+    border-radius: 5px;
+}
+.shape-11 div:nth-child(2) span:nth-child(1) {
+    margin: 0.4rem 0;
+}
+.shape-11 div:nth-child(2) span:nth-child(3) {
+    width: 1.3rem;
+    height: 1.3rem;
+    border-radius: 50%;
+    align-self: flex-end;
+    margin-top: 0.7rem;
+    z-index: 1;
+} 
+.shape-11 div:nth-child(1),
+.shape-11 div:nth-child(3) {
+    width: 3.5rem;
+    height: 2.2rem;
+    border: 5px solid #fff1c1;
+    margin-top: -1.8rem;
+}
+.shape-11 div:nth-child(1) {
+    border-radius: 2rem 0 2rem 0;
+    width: 2rem;
+}
+.shape-11 div:nth-child(3) {
+    border-radius: 0 1rem 1rem 0;
+    margin-left: -1rem;
+}
+
+
+/* ============== SHAPE 12 (house)=============== */
+.shape-12 {
+    background-color: #6592cf;
+    flex-direction: column;
+}
+.shape-12 span:first-child {
+    width: 10rem;
+    height: 10rem;
+    border-bottom: 5rem solid #243d83;
+    border-left: 7rem solid transparent;
+    border-right: 7rem solid transparent;
+    position: relative;
+}
+.shape-12 span:last-child::before {
+    content: "";
+    width: 5rem;
+    height: 6px;
+    background: #eeb850;
+    position: absolute;
+    top: 0;
+    left: calc(50% - 2.5rem);
+}
+.shape-12 span:last-child {
+    width: 10rem;
+    height: 8rem;
+    background: #243d83;
+    position: relative;
+}
+.shape-12 span:last-child::after {
+    content: "";
+    width: 3rem;
+    height: 4rem;
+    background: #eeb850;
+    position: absolute;
+    bottom: 0;
+    left: calc(50% - 1.5rem);
+}
+
+
+/* ============== SHAPE 13 (gatar)=============== */
+.shape-13 {
+    background: #f3ac3c;
+}
+.shape-13 div {
+    background: #998235;
+}
+.shape-13 div:first-child {
+    width: 6rem;
+    height: 6rem;
+    border-radius: 50%;
+    position: relative;
+}
+.shape-13 div:first-child span{
+    width: 6px;
+    height: 2rem;
+    background: #1a4341;
+    position: absolute;
+    top: calc(50% - 1rem);
+    left: 2rem;
+    border-radius: 4px;
+}
+.shape-13 div:nth-child(2) {
+    width: 4.5rem;
+    height: 4.5rem;
+    border-radius: 50%;
+    margin-left: -2.5rem;
+    z-index: 1;
+    display: grid;
+    place-items: center;
+}
+.shape-13 div:nth-child(2) span {
+    width: 2.2rem;
+    height: 2.2rem;
+    background: #1a4341;
+    border-radius: 50%;
+    border: 4px solid #f2ad43;
+}
+.shape-13 div:nth-child(3) {
+    width: 6rem;
+    height: 1rem;
+    background: #1a4341;
+    margin-left: -0.4rem;
+}
+.shape-13 div:nth-child(4) {
+    width: 2.2rem;
+    height: 1.6rem;
+    border-radius: 0.5rem;
+    margin-left: -0.4rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.3rem;
+    padding: 0.4rem;
+}
+.shape-13 div:nth-child(4) span {
+    width: 100%;
+    height: 0.4rem;
+    background: #1a4341;
+}
+
+
+
+/* ============== SHAPE 14 ()=============== */
+.shape-14 {
+    background: #191919;
+}
+.shape-14 div{
+    width: 7rem;
+    height: 10rem;
+    background: #f2ad43;
+    border-radius: 4rem 4rem 1rem 1rem;
+    position: relative;
+    overflow: hidden;
+}
+.shape-14 div span:nth-child(1) {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background: #fff1c1;
+    position: absolute;
+    top: calc(50% - 1rem);
+    left: calc(50% - 1rem);
+}
+.shape-14 div span:nth-child(2) {
+    width: 8rem;
+    height: 8rem;
+    background: #e08027;
+    position: absolute;
+    bottom: -3rem;
+    left: -3rem;
+    border-radius: 50%;
+}
+.shape-14 div span:nth-child(3) {
+    width: 10rem;
+    height: 10rem;
+    background: #824b20;
+    position: absolute;
+    bottom: -4.5rem;
+    right: -5rem;
+    border-radius: 50%;
+}
+
+
+/* ============== SHAPE 15 =============== */
+.shape-15 {
+    background: #1a4341;
+    overflow: hidden;
+    
+}
+.shape-15 span:first-child {
+    width: 5rem;
+    height: 6rem;
+    border: 1rem solid #998235;
+    position: absolute;
+    top: -1rem;
+}
+.shape-15 span:first-child::before {
+    content: '';
+    display: block;
+    width: 1rem;
+    height: 17rem;
+    background: #dda13d;
+    margin-left: 1rem;
+}
+.shape-15 span:last-child {
+    width: 9rem;
+    height: 8rem;
+    border: 1rem solid #dda13d;
+    position: absolute;
+    top: -1rem;
+}
+.shape-15 span:last-child::before {
+    content: '';
+    width: 9rem;
+    height: 1rem;
+    background: #998235;
+    position: absolute;
+    bottom: -3rem;
+    left: -1rem;
+}
+
+
+
+/* ============== SHAPE 16 (clock) =============== */
+
+.shape-16 {
+    background-color: #998235;
+}
+.shape-16 div:nth-child(1) {
+    background-color: #fff1c1;
+    border: 6px solid rgb(253, 0, 135);
+    width: 8rem;
+    height: 8rem;
+    border-radius: 50%;
+    position: relative;
+}
+.shape-16 div:nth-child(1) span {
+    width: 0.8rem;
+    height: 0.3rem;
+    border-radius: 2rem;
+    background: rgb(50, 43, 43);
+}
+.shape-16 div:nth-child(1) span:first-child {
+    position: absolute;
+    top: 3.5rem;
+    left: 0.3rem;
+}
+.shape-16 div:nth-child(1) span:nth-child(2) {
+    position: absolute;
+    top: 3.5rem;
+    right: 0.3rem;
+}
+.shape-16 div:nth-child(1) span:nth-child(3) {
+    position: absolute;
+    left: 3.5rem;
+    top: 0.4rem;
+    height: 0.8rem;
+    width: 0.3rem;
+}
+.shape-16 div:nth-child(1) span:nth-child(4) {
+    position: absolute;
+    bottom: 0.4rem;
+    left: 3.4rem;
+    height: 0.8rem;
+    width: 0.3rem;
+}
+
+
+.shape-16 div:first-child span:nth-child(5) {
+    width: 3.9rem;
+    height: 6px;
+    background: rgb(50, 43, 43);
+    position: absolute;
+    left: 2.2rem;
+    top: 2.7rem;
+    transform: rotate(120deg);
+
+}
+.shape-16 div:first-child span:nth-child(6) {
+    width: 3rem;
+    height: 5px;
+    background: rgb(50, 43, 43);
+    position: absolute;
+    left: 1.7rem;
+    top: 3rem;
+    transform: rotate(50deg);
+}
+.shape-16 div:first-child span:nth-child(7) {
+    width: 3.9rem;
+    height: 4px;
+    background: rgb(253, 0, 135);
+    position: absolute;
+    left: 0.9rem;
+    bottom: 2.4rem;
+    transform: rotate(310deg);
+}
+.shape-16 div:first-child span:nth-child(8){
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: rgb(253, 0, 135);
+    position: absolute;
+    top: 3.4rem;
+    left: 3.2rem;
+}
+
+/* .shape-16 div:first-child span:nth-child(9){
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: rgb(253, 0, 135);
+    position: absolute;
+    top: 2.4rem;
+    left: 0.4rem;
+}
+.shape-16 div:first-child span:nth-child(10){
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: rgb(253, 0, 135);
+    position: absolute;
+    top: 1.4rem;
+    left: 0.9rem;
+}
+.shape-16 div:first-child span:nth-child(11){
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: rgb(253, 0, 135);
+    position: absolute;
+    top: 0.7rem;
+    left: 1.6rem;
+}
+.shape-16 div:first-child span:nth-child(12){
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: rgb(253, 0, 135);
+    position: absolute;
+    top: 0.4rem;
+    left: 2.4rem;
+} */
